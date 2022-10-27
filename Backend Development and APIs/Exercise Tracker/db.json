@@ -1,0 +1,26 @@
+{
+  "users": {
+    "358": {
+      "username": "test",
+      "_id": 358,
+      "count": 3,
+      "log": [
+        {
+          "description": "test",
+          "duration": "29",
+          "date": "Wed Oct 26 2022"
+        },
+        {
+          "description": "test 2",
+          "duration": "668",
+          "date": "Wed Oct 19 2022"
+        },
+        {
+          "description": "test 3",
+          "duration": "87",
+          "date": "Thu Oct 20 2022"
+        }
+      ]
+    }
+  }
+}
