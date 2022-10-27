@@ -45,10 +45,11 @@ app.get("/api/users", async (req, res) => {
 
 
 app.post("/api/users/:_id/exercises", async (req, res) => {
+  console.log(req.body)
   let id = req.params._id;
   let description = req.body.description;
   let duration = Number(req.body.duration);
-  let date = new Date(req.body.date + " EDT").toDateString();
+  let date = new Date(req.body.date + " EST").toDateString();
   const { users } = db.data
   if (date == "Invalid Date") {
     date = new Date().toDateString();
@@ -63,13 +64,14 @@ app.post("/api/users/:_id/exercises", async (req, res) => {
 
 app.get("/api/users/:_id/logs", async (req, res) => {
   let id = req.params._id;
-  let from = new Date(req.query.from + " EDT");
-  let to = new Date(req.query.to + " EDT");
+  let from = new Date(req.query.from + " EST");
+  let to = new Date(req.query.to + " EST");
   let limit = req.query.limit;
+  console.log(limit)
   const { users } = db.data
   let jsonToSend = { username: users[id].username, _id: id, count: users[id].count, log: [] }
   for (let i = 0; i < users[id].log.length; i++) {
-    let date = new Date(users[id].log[i].date + "EDT");
+    let date = new Date(users[id].log[i].date + "EST");
     if (from.toDateString() != "Invalid Date" && to.toDateString() != "Invalid Date") {
     if (date >= from && date <= to) {
       jsonToSend.log.push(users[id].log[i])
@@ -89,7 +91,7 @@ app.get("/api/users/:_id/logs", async (req, res) => {
     jsonToSend.log.push(users[id].log[i])
   }
 
-    if (i == Number(limit)-1) {
+    if (jsonToSend.log.length == limit) {
       break;
     }
   }
