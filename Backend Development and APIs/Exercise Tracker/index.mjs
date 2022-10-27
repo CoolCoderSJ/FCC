@@ -47,30 +47,29 @@ app.get("/api/users", async (req, res) => {
 app.post("/api/users/:_id/exercises", async (req, res) => {
   let id = req.params._id;
   let description = req.body.description;
-  let duration = req.body.duration;
-  let date = req.body.date;
+  let duration = Number(req.body.duration);
+  let date = new Date(req.body.date + " EDT").toDateString();
   const { users } = db.data
-  if (date == "") {
+  if (date == "Invalid Date") {
     date = new Date().toDateString();
   }
-  else {
-    date = new Date(date).toDateString();
-  }
+
   users[id].count++;
   users[id].log.push({ description: description, duration: duration, date: date })
   await db.write()
-  res.json({ username: users[id].username, description: description, duration: duration, _id: id, date: date });
+  console.log({ _id: id, username: users[id].username, date: date, duration: duration, description: description })
+  res.json({ _id: id, username: users[id].username, date: date, duration: duration, description: description });
 })
 
 app.get("/api/users/:_id/logs", async (req, res) => {
   let id = req.params._id;
-  let from = new Date(req.query.from);
-  let to = new Date(req.query.to);
+  let from = new Date(req.query.from + " EDT");
+  let to = new Date(req.query.to + " EDT");
   let limit = req.query.limit;
   const { users } = db.data
   let jsonToSend = { username: users[id].username, _id: id, count: users[id].count, log: [] }
   for (let i = 0; i < users[id].log.length; i++) {
-    let date = new Date(users[id].log[i].date);
+    let date = new Date(users[id].log[i].date + "EDT");
     if (from.toDateString() != "Invalid Date" && to.toDateString() != "Invalid Date") {
     if (date >= from && date <= to) {
       jsonToSend.log.push(users[id].log[i])
@@ -90,7 +89,7 @@ app.get("/api/users/:_id/logs", async (req, res) => {
     jsonToSend.log.push(users[id].log[i])
   }
 
-    if (i == limit-1) {
+    if (i == Number(limit)-1) {
       break;
     }
   }
