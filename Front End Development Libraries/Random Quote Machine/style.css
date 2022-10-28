@@ -1,0 +1,55 @@
+body {
+  background-color: #369794;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#quote-box {
+  background-color: #FDF6EE;
+  border-radius: 5px;
+  position: relative;
+  width: 450px;
+  padding: 40px 50px;
+  display: table;
+}
+
+#text {
+  color: #369794;
+  text-align: center;
+  width: 450px;
+  height: auto;
+}
+
+#author {
+  color: #6CB1AD;
+  width: 450px;
+  height: auto;
+  padding-top: 20px;
+  text-align: right;
+}
+
+#new-quote {
+  color: #FFF;
+  float: right;
+}
+
+a {
+  color: #FFF;
+  float: left;
+}
+
+.button, button {
+  border-radius: 6px; 
+  background-color: #369794;
+  padding: 10px;
+  border: none;
+  
+}
+
+.button:hover, button:hover {
+  cursor: pointer
+}
