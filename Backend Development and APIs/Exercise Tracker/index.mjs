@@ -46,7 +46,7 @@ app.get("/api/users", async (req, res) => {
 
 app.post("/api/users/:_id/exercises", async (req, res) => {
   console.log(req.body)
-  let id = req.params._id;
+  let _id = req.params._id;
   let description = req.body.description;
   let duration = Number(req.body.duration);
   let date = new Date(req.body.date + " EST").toDateString();
@@ -55,11 +55,11 @@ app.post("/api/users/:_id/exercises", async (req, res) => {
     date = new Date().toDateString();
   }
 
-  users[id].count++;
-  users[id].log.push({ description: description, duration: duration, date: date })
+  users[_id].count++;
+  users[_id].log.push({ description: description, duration: duration, date: date })
   await db.write()
-  console.log({ _id: id, username: users[id].username, date: date, duration: duration, description: description })
-  res.json({ _id: id, username: users[id].username, date: date, duration: duration, description: description });
+  console.log({ _id: _id, username: users[_id].username, date: date, duration: duration, description: description })
+  res.json({ username: users[_id].username, _id: Number(_id), description, duration, date });
 })
 
 app.get("/api/users/:_id/logs", async (req, res) => {
@@ -67,7 +67,6 @@ app.get("/api/users/:_id/logs", async (req, res) => {
   let from = new Date(req.query.from + " EST");
   let to = new Date(req.query.to + " EST");
   let limit = req.query.limit;
-  console.log(limit)
   const { users } = db.data
   let jsonToSend = { username: users[id].username, _id: id, count: users[id].count, log: [] }
   for (let i = 0; i < users[id].log.length; i++) {
