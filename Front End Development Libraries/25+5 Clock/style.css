@@ -1,0 +1,85 @@
+body {
+  background-color: #369794;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#main-box {
+  background-color: #FDF6EE;
+  border-radius: 5px;
+  position: relative;
+  width: 400px;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.text {
+  color: #369794;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.button, button {
+  background-color: #FDF6EE;
+  border: 1px solid #369794;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.button:active, button:active {
+  background-color: #369794;
+  color: #FDF6EE;
+}
+
+.button:hover, button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 #369794;
+}
+
+div#controls {
+  display: flex;
+  gap: 50px;
+  width: 100%;
+}
+
+#controls div {
+  display: flex;gap: 10px;
+}
+
+#controls div div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+}
+
+#controls div div h3, #controls div div h5 {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+div#timer {display: flex;flex-direction: column;text-align: center;}
+
+h3#timer-label {
+  margin-bottom: 2px;
+}
+
+#timer div {
+  display: flex;
+  gap: 20px;
+}

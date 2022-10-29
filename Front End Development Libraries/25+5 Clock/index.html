@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - FCC 25+5 Timer</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <audio id="beep" src="http://www.peter-weinberg.com/files/1014/8073/6015/BeepSound.wav" style="display: none;"></audio>
+  <div id="main-box">
+    <div id="controls">
+      <div>
+      <button id="break-decrement">-</button>
+      <div>
+        <h3 id="break-length">5</h3>
+        <h5 id="break-label">Break Length</h5>
+      </div>
+      <button id="break-increment">+</button>
+      </div>
+      <div>
+      <button id="session-decrement">-</button>
+      <div>
+        <h3 id="session-length">25</h3>
+        <h5 id="session-label">Session Length</h5>
+      </div>
+      <button id="session-increment">+</button>
+      </div>
+    </div>
+
+    <div id="timer">
+      <h3 id="timer-label">Session</h3>
+      <h1 id="time-left">25:00</h1>
+      <div>
+      <button id="start_stop">Start/Stop</button>
+      <button id="reset">Reset</button>
+      </div>
+    </div>
+  </div>
+  <!-- partial -->
+  <script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>
