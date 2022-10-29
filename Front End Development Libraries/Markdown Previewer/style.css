@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  gap: 25px;
+}
+
+#editor, #preview {
+  width: 100%;
+  height: 100%;
+  font-family: 'Work Sans', sans-serif;
+}
+
+#editor {
+  resize: none;
+}

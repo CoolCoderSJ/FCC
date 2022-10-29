@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - FCC Drumpad</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div id="drum-machine">
+    <div id="drums">
+      <div class="drum-pad" id="drum_Q" data-key="Heater 1" onclick="playSound('Q')">
+        <audio class="clip" id="Q" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"></audio>
+        Q
+      </div>
+      <div class="drum-pad" id="drum_W" data-key="Heater 2" onclick="playSound('W')">
+        <audio class="clip" id="W" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"></audio>
+        W
+      </div>
+      <div class="drum-pad" id="drum_E" data-key="Heater 3" onclick="playSound('E')">
+        <audio class="clip" id="E" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"></audio>
+        E
+      </div>
+      <div class="drum-pad" id="drum_A" data-key="Heater 4" onclick="playSound('A')">
+        <audio class="clip" id="A" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3"></audio>
+        A
+      </div>
+      <div class="drum-pad" id="drum_S" data-key="Clap" onclick="playSound('S')">
+        <audio class="clip" id="S" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"></audio>
+        S
+      </div>
+      <div class="drum-pad" id="drum_D" data-key="Open High Hat" onclick="playSound('D')">
+        <audio class="clip" id="D" src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3"></audio>
+        D
+      </div>
+      <div class="drum-pad" id="drum_Z" data-key="Kick-n'-Hat" onclick="playSound('Z')">
+        <audio class="clip" id="Z" src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"></audio>
+        Z
+      </div>
+      <div class="drum-pad" id="drum_X" data-key="Kick" onclick="playSound('X')">
+        <audio class="clip" id="X" src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3"></audio>
+        X
+      </div>
+      <div class="drum-pad" id="drum_C" data-key="Closed High Hat" onclick="playSound('C')">
+        <audio class="clip" id="C" src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"></audio>
+        C
+      </div>
+    </div>
+    <div id="display"></div>
+  </div>
+  <!-- partial -->
+  <script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>

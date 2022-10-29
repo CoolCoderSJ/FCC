@@ -1,0 +1,78 @@
+body {
+  background-color: #369794;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#drum-machine {
+  background-color: #FDF6EE;
+  border-radius: 5px;
+  position: relative;
+  width: 450px;
+  padding: 40px 50px;
+  display: flex;
+  gap: 20px;
+}
+
+.text {
+  color: #369794;
+  text-align: center;
+}
+
+.button, button {
+  border-radius: 6px; 
+  background-color: #369794;
+  padding: 10px;
+  border: none;
+  
+}
+
+.button:hover, button:hover {
+  cursor: pointer
+}
+
+#display {
+  background-color: #FDF6EE;
+  border: 1px solid #369794;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#drums {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.drum-pad {
+  background-color: #FDF6EE;
+  border: 1px solid #369794;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.drum-active {
+  background-color: #369794;
+  color: #FDF6EE;
+}
+
+.drum-pad:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 #369794;
+}
